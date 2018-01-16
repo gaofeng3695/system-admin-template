@@ -49,6 +49,7 @@ export default {
       const that = this
       that.$refs[formName].validate(valid => {
         if (valid) {
+          // /cloudlink-analysis-tianjiio/cloudlink-core-framework/login/loginByPassword
           this.$http
             .post('/cloudlink-analysis-tianjiio/login/loginByPassword', {
               loginNum: that.username,
