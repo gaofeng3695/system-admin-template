@@ -12,13 +12,16 @@
                 <div class="login-btn">
                     <el-button type="primary" @click="submitForm('ruleForm')">登录</el-button>
                 </div>
-                <p class="tip">Tips : 用户名和密码随便填。</p>
+                <p class="tip">Tips : 用户名15811236011和密码123123。</p>
             </el-form>
         </div>
     </div>
 </template>
 
 <script>
+
+  import md5 from 'js-md5'
+
   export default {
     data: function() {
       let checkUser = (rule, value, callback) => {
@@ -35,8 +38,8 @@
       };
       return {
         ruleForm: {
-          username: "",
-          password: ""
+          username: 15811236011,
+          password: 123123
         },
         rules: {
           username: [{ validator: checkUser, trigger: "blur" }],
@@ -51,18 +54,22 @@
           if (valid) {
             this.$http
               .post("/cloudlink-analysis-tianjiio/login/loginByPassword", {
-                loginNum: that.username,
-                password: that.password
+                loginNum: ''+that.ruleForm.username,
+                password: md5(that.ruleForm.password+'')
               })
               .then(function(res) {
-                console.log(res);
+                if(res.data.success === 1){
+                  var userBo = res.data.rows[0];
+                  localStorage.setItem("ms_username", userBo.userName);
+                  that.$router.push("/index");
+                }else{
+                  that.$message.error('用户名或密码错误');
+                }
               })
               .catch(function(err) {
+                that.$message.error('用户名或密码错误');
                 console.log('err',err);
               });
-            return;
-            localStorage.setItem("ms_username", that.ruleForm.username);
-            that.$router.push("/index");
           } else {
             console.log("error submit!!");
             return false;

@@ -12,11 +12,11 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
       '/cloudlink-': {
-        target: 'http://192.168.100.213/:8050',
+        target: 'http://192.168.100.212:3000/',
         changeOrigin: true,
-        // pathRewrite: {
-        //     '/cloudlink-': '/cloudlink-'
-        // }
+        pathRewrite: {
+            '/cloudlink-': '/cloudlink-'
+        }
     }
     },
 
