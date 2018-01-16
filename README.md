@@ -3,6 +3,7 @@
 基于 vue.js 的前端开发环境，用于前后端分离后的单页应用开发。项目包含：
 
 - 基础库: `vue.js`、`vue-router`、`vuex`
+- 第三方库: `axios`
 - 编译/打包工具：`webpack`、`babel`
 
 
@@ -21,7 +22,7 @@
     │   ├── index.js                        项目配置文件
     │   ├── prod.env.js                     生产环境变量
     ├── mock                            mock数据目录
-    ├── src                             源码目录    
+    ├── src                             源码目录
     │   ├── main.js                         入口js文件
     │   ├── app.vue                         根组件
     │   ├── assets                          资源目录
@@ -60,10 +61,10 @@
 
     #开启本地开发服务器localhost:8080，自动实现热替换功能
     npm run dev
-    
+
     #使用生产环境配置构建项目，构建好的文件会输出到 "dist" 目录
     npm run build
-    
+
     # 除了正式打包之外，还会输出一份打包报告
     npm run build --report
 
@@ -112,5 +113,8 @@
 
 - vue.js 中文网： [https://cn.vuejs.org/](https://cn.vuejs.org/)
 - ES2015 入门教程：[http://es6.ruanyifeng.com/](http://es6.ruanyifeng.com/)
+- axios 官方文档：[https://github.com/axios/axios](https://github.com/axios/axios)
+- axios 翻译文档：[https://www.jianshu.com/p/df464b26ae58](https://www.jianshu.com/p/df464b26ae58)
 
+- 如何使用Vue2.0开发富交互式WEB应用： [https://ppt.baomitu.com/d/52096df3#/](https://ppt.baomitu.com/d/52096df3#/)
   ​

@@ -13,6 +13,48 @@ export default new Router({
       path: '/login',
       name: 'login',
       component: resolve => require(['../views/Login.vue'], resolve)
+    },
+    {
+      path: '/index',
+      component: resolve => require(['../components/Home.vue'], resolve),
+      children: [ //
+        {
+          path: '/',
+          component: resolve => require(['../views/View01.vue'], resolve)
+        },
+        {
+          path: '/view02',
+          component: resolve => require(['../views/View02.vue'], resolve)
+        },
+        // {
+        //   path: '/vuetable',
+        //   component: resolve => require(['../components/page/VueTable.vue'], resolve) // vue-datasource组件
+        // },
+        // {
+        //   path: '/baseform',
+        //   component: resolve => require(['../components/page/BaseForm.vue'], resolve)
+        // },
+        // {
+        //   path: '/vueeditor',
+        //   component: resolve => require(['../components/page/VueEditor.vue'], resolve) // Vue-Quill-Editor组件
+        // },
+        // {
+        //   path: '/markdown',
+        //   component: resolve => require(['../components/page/Markdown.vue'], resolve) // Vue-Quill-Editor组件
+        // },
+        // {
+        //   path: '/upload',
+        //   component: resolve => require(['../components/page/Upload.vue'], resolve) // Vue-Core-Image-Upload组件
+        // },
+        // {
+        //   path: '/basecharts',
+        //   component: resolve => require(['../components/page/BaseCharts.vue'], resolve) // vue-schart组件
+        // },
+        // {
+        //   path: '/drag',
+        //   component: resolve => require(['../components/page/DragList.vue'], resolve) // 拖拽列表组件
+        // }
+      ]
     }
   ]
 })
