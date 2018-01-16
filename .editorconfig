@@ -1,9 +1,21 @@
 root = true
 
+# 对所有的文件生效
 [*]
+# 文件编码，
+# 可选值： latin1
+# utf-8。一般用这个。
+# utf-16be
+# utf-16le
 charset = utf-8
+#缩进风格：空格
 indent_style = space
+#缩进大小
 indent_size = 2
+#换行符lf
 end_of_line = lf
+#结尾总是插入新的一行
 insert_final_newline = true
+#行尾允许空格
 trim_trailing_whitespace = true
+
