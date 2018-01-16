@@ -50,6 +50,52 @@
 
       npm config set registry https://registry.npm.taobao.org
 
+## 编辑器配置
+
+使用vscode 进行开发，针对vue中eslint规则，进行一些格式化的配置.
+
+安装插件:
+
+- ESLint : 用来提示格式错误和格式化
+
+- Vetur : 默认自带了格式化的功能，快捷键是shift+option+f（mac）。主要用来格式化复制粘贴的代码。
+
+- Javascript Standard Style : js 的格式化(很符合ESLint的要求).
+
+在vscode中，点击 文件>首选项>设置,在用户设置中，复制以下内容：
+
+```
+{
+  "workbench.startupEditor": "welcomePage",
+  // 取消原本的格式化 
+  "vetur.format.defaultFormatter.js": "vscode-typescript",
+  // 在方法前插入空格
+  "javascript.format.insertSpaceBeforeFunctionParenthesis": true,
+  // 快速建议
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+  "editor.tabSize": 2,
+  // 自动保存
+  "eslint.autoFixOnSave": true,
+  // eslint 的 验证文件
+  "eslint.validate": [
+    "javascript",
+    "html",
+    "vue",
+    "javascriptreact",
+    {
+      "language": "html",
+      "autoFix": true
+    },
+    {
+      "language": "vue",
+      "autoFix": true
+    }
+  ]
+}
+
+```
 
 
 ## 快速开始

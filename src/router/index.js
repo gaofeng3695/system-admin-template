@@ -25,7 +25,7 @@ export default new Router({
         {
           path: '/view02',
           component: resolve => require(['../views/View02.vue'], resolve)
-        },
+        }
         // {
         //   path: '/vuetable',
         //   component: resolve => require(['../components/page/VueTable.vue'], resolve) // vue-datasource组件
