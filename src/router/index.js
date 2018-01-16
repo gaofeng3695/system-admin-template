@@ -4,7 +4,8 @@ import Router from 'vue-router'
 Vue.use(Router)
 
 export default new Router({
-  routes: [ //
+  routes: [
+    //
     {
       path: '/',
       redirect: '/login'
@@ -17,7 +18,8 @@ export default new Router({
     {
       path: '/index',
       component: resolve => require(['../components/Home.vue'], resolve),
-      children: [ //
+      children: [
+        //
         {
           path: '/',
           component: resolve => require(['../views/View01.vue'], resolve)
@@ -25,7 +27,7 @@ export default new Router({
         {
           path: '/view02',
           component: resolve => require(['../views/View02.vue'], resolve)
-        },
+        }
         // {
         //   path: '/vuetable',
         //   component: resolve => require(['../components/page/VueTable.vue'], resolve) // vue-datasource组件

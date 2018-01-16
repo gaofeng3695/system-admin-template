@@ -4,6 +4,7 @@
 
 - 基础库: `vue.js`、`vue-router`、`vuex`
 - 第三方库: `axios`
+- 代码检查工具: `eslint`
 - 编译/打包工具：`webpack`、`babel`
 
 
@@ -21,7 +22,6 @@
     │   ├── dev.env.js                      开发环境变量
     │   ├── index.js                        项目配置文件
     │   ├── prod.env.js                     生产环境变量
-    ├── mock                            mock数据目录
     ├── src                             源码目录
     │   ├── main.js                         入口js文件
     │   ├── app.vue                         根组件
@@ -112,9 +112,13 @@
 ## 相关资源
 
 - vue.js 中文网： [https://cn.vuejs.org/](https://cn.vuejs.org/)
+- vue.js 风格指南 ： [https://cn.vuejs.org/v2/style-guide/](https://cn.vuejs.org/v2/style-guide/)
+
 - ES2015 入门教程：[http://es6.ruanyifeng.com/](http://es6.ruanyifeng.com/)
+
 - axios 官方文档：[https://github.com/axios/axios](https://github.com/axios/axios)
 - axios 翻译文档：[https://www.jianshu.com/p/df464b26ae58](https://www.jianshu.com/p/df464b26ae58)
+- eslint 规则文档：[http://eslint.cn/docs/rules/](http://eslint.cn/docs/rules/)
 
 - 如何使用Vue2.0开发富交互式WEB应用： [https://ppt.baomitu.com/d/52096df3#/](https://ppt.baomitu.com/d/52096df3#/)
   ​
