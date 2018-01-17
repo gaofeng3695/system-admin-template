@@ -1,9 +1,9 @@
 <template>
   <div class="main">
-    这里是view02
+    <p class="view">view02</p>
     <el-button @click="getTableList">刷新</el-button>
-    <el-table :data="tableData" v-loading="loading" style="width: 100%">
-      <el-table-column prop="string" label="星" width="180">
+    <el-table :data="tableData" v-loading="loading" border style="width: 100%">
+      <el-table-column fixed prop="string" label="星" width="180">
       </el-table-column>
       <el-table-column prop="name" label="姓名" width="180">
       </el-table-column>
@@ -16,24 +16,6 @@
         </template>
       </el-table-column>
     </el-table>
-    <!-- <p>{{rel}}</p> -->
-    <!-- <el-table :data="tableData" border style="width: 100%">
-      <el-table-column prop="string" label="星" width="150">
-      </el-table-column>
-      <el-table-column prop="name" label="姓名" width="120">
-      </el-table-column>
-      <el-table-column prop="address" label="地址" width="120">
-      </el-table-column>
-      <el-table-column prop="email" label="email" width="120">
-      </el-table-column>
-      <el-table-column fixed="right" label="操作" width="100">
-        <template slot-scope="scope">
-          <el-button @click="handleClick(scope.row)" type="text" size="small">查看</el-button>
-          <el-button type="text" size="small">编辑</el-button>
-        </template>
-      </el-table-column>
-    </el-table> -->
-
     <el-dialog title="查看" :visible.sync="dialogVisible" width="30%" :before-close="handleClose">
       <span>这是一段信息</span>
       <span slot="footer" class="dialog-footer">
@@ -47,6 +29,7 @@
 
 <script>
 export default {
+  name: 'view02',
   data () {
     return {
       tableData: [],
@@ -85,6 +68,11 @@ export default {
 }
 </script>
 
-<style scoped>
-
+<style scoped lang='scss'>
+.main {
+  .view {
+    color: red;
+    font-size: 16px;
+  }
+}
 </style>
