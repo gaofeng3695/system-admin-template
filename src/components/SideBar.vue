@@ -20,44 +20,44 @@
 </template>
 
 <script>
-export default {
-  data () {
-    return {
-      items: [
-        {
-          icon: 'el-icon-setting',
-          index: 'index',
-          title: '自述'
-        },
-        {
-          icon: 'el-icon-menu',
-          index: '2',
-          title: '表格',
-          subs: [
-            {
-              index: 'view02',
-              title: 'view02'
-            },
-            {
-              index: 'vuetable',
-              title: 'Vue表格组件'
-            }
-          ]
-        },
-        {
-          icon: 'el-icon-upload2',
-          index: 'drag',
-          title: '拖拽'
-        }
-      ]
-    }
-  },
-  computed: {
-    onRoutes () {
-      return this.$route.path.replace('/', '')
+  export default {
+    data () {
+      return {
+        items: [
+          {
+            icon: 'el-icon-setting',
+            index: 'index',
+            title: '自述'
+          },
+          {
+            icon: 'el-icon-menu',
+            index: '2',
+            title: '表格',
+            subs: [
+              {
+                index: 'view02',
+                title: 'view02'
+              },
+              {
+                index: 'vuetable',
+                title: 'Vue表格组件'
+              }
+            ]
+          },
+          {
+            icon: 'el-icon-upload2',
+            index: 'drag',
+            title: '拖拽'
+          }
+        ]
+      }
+    },
+    computed: {
+      onRoutes () {
+        return this.$route.path.replace('/', '')
+      }
     }
   }
-}
 </script>
 
 <style scoped>

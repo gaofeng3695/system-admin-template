@@ -21,24 +21,24 @@
 
 
 <style>
-  .el-header {
-    background-color: #b3c0d1;
-    color: #333;
-    line-height: 60px;
-  }
+.el-header {
+  background-color: #b3c0d1;
+  color: #333;
+  line-height: 60px;
+}
 
-  .el-aside {
-    color: #333;
-  }
+.el-aside {
+  color: #333;
+}
 </style>
 
 <script>
-  import vHead from "../components/Header.vue";
-  import vSidebar from "../components/Sidebar.vue";
-  export default {
-    components: {
-      vHead,
-      vSidebar
-    }
-  };
+import vHead from '../components/Header.vue'
+import vSidebar from '../components/Sidebar.vue'
+export default {
+  components: {
+    vHead,
+    vSidebar
+  }
+}
 </script>
