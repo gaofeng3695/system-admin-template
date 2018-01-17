@@ -8,6 +8,8 @@
 - 编译/打包工具：`webpack`、`babel`
 
 
+
+
 ## 目录结构
 
     ├── README.md                       项目介绍
@@ -49,6 +51,7 @@
 2. 然后切换 npm 的源到国内镜像：
 
       npm config set registry https://registry.npm.taobao.org
+
 
 
 
@@ -98,13 +101,18 @@ vscode版本需求：v1.19.2
     "javascriptreact",
   ]
 }
-
 ```
+
 
 
 ## 快速开始
 
-    这里写如何快速下载该项目
+    #下载
+    git clone http://192.168.102.9/vue-cli/admin-demo.git
+    #进入目录
+    cd admin-demo
+    #安装依赖
+    npm install
 
 
 ## 命令列表：
@@ -127,6 +135,7 @@ vscode版本需求：v1.19.2
 
       // 待定
 
+
 ## 联调方式
 
 前后端分离后，由于服务端和前端的开发环境处于2台不同的机器上，前端的异步请求需要代理到后端机器中。
@@ -139,6 +148,8 @@ vscode版本需求：v1.19.2
 ## 模块化
 
 开发时可以使用 ES2015 module 语法，构建时每个文件会编译成 amd 模块。
+
+
 
 ## 组件化
 
@@ -163,6 +174,7 @@ vscode版本需求：v1.19.2
 
 - vue.js 中文网： [https://cn.vuejs.org/](https://cn.vuejs.org/)
 - vue.js 风格指南 ： [https://cn.vuejs.org/v2/style-guide/](https://cn.vuejs.org/v2/style-guide/)
+- ElementUI 组件库 ： [http://element-cn.eleme.io/#/zh-CN/component/installation](http://element-cn.eleme.io/#/zh-CN/component/installation)
 
 - ES2015 入门教程：[http://es6.ruanyifeng.com/](http://es6.ruanyifeng.com/)
 

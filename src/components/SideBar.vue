@@ -61,5 +61,7 @@
 </script>
 
 <style scoped>
-
+  .el-menu {
+    border-right: solid 1px #000;
+  }
 </style>
