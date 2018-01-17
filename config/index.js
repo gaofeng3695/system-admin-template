@@ -11,13 +11,28 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
+      //   '/cloudlink-analysis-tianjiio/**': {
+      //     target: 'http://192.168.100.92:8050',
+      //     changeOrigin: true,
+      //     pathRewrite: {
+      //         '^/cloudlink-analysis-tianjiio': ''
+      //     }
+      // }
       '/cloudlink-': {
         target: 'http://192.168.100.212:3000/',
         changeOrigin: true,
         pathRewrite: {
           '/cloudlink-': '/cloudlink-'
         }
+      },
+      '/ms': {
+        target: 'https://www.easy-mock.com/mock/5a5d604377536b6a9a24dbcb/example',
+        changeOrigin: true,
+        pathRewrite: {
+          '/ms': ''
+        }
       }
+
     },
 
     // Various Dev Server settings
