@@ -31,6 +31,13 @@ module.exports = {
         pathRewrite: {
           '/ms': ''
         }
+      },
+      '/upload': {
+        target: 'https://jsonplaceholder.typicode.com',
+        changeOrigin: true,
+        pathRewrite: {
+          '/upload': ''
+        }
       }
 
     },

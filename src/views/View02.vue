@@ -1,6 +1,6 @@
 <template>
   <div class="main">
-    <p class="view">view02</p>
+    <p class="view table-view">view02</p>
     <el-button @click="getTableList">刷新</el-button>
     <el-table :data="tableData" v-loading="loading" border style="width: 100%">
       <el-table-column fixed prop="string" label="星" width="180">
@@ -40,6 +40,12 @@ export default {
   created () {
     this.getTableList()
   },
+  watch: {
+    '$route' (to, from) {
+      console.log(to)
+      console.log(from)
+    }
+  },
   methods: {
     getTableList: function () {
       this.loading = true
@@ -69,6 +75,7 @@ export default {
 </script>
 
 <style scoped lang='scss'>
+@import url("./../../static/table.scss");
 .main {
   .view {
     color: red;

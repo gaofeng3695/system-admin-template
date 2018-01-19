@@ -2,7 +2,7 @@
   <el-container style="height: 100%; border: 1px solid #eee">
 
     <el-header height="70px" style="background-color: #242f42">
-        <vHead></vHead>
+      <vHead></vHead>
     </el-header>
 
     <el-container>
@@ -10,11 +10,13 @@
         <vSidebar></vSidebar>
       </el-aside>
       <el-main>
-        <transition name="move" mode="out-in"><router-view></router-view></transition>
+        <transition name="move" mode="out-in">
+          <router-view></router-view>
+        </transition>
       </el-main>
     </el-container>
 
-</el-container>
+  </el-container>
 </template>
 
 
