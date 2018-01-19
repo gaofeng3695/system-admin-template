@@ -26,7 +26,7 @@ module.exports = {
         }
       },
       '/ms': {
-        target: 'https://www.easy-mock.com/mock/5a5d604377536b6a9a24dbcb/example',
+        target: 'https://www.easy-mock.com/mock/5a618d66f589eb5d9a9761da/cloudlink',
         changeOrigin: true,
         pathRewrite: {
           '/ms': ''

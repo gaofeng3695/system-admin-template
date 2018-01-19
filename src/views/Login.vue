@@ -36,7 +36,7 @@
       }
       return {
         ruleForm: {
-          username: 15811236011,
+          username: 18000000000,
           password: 123123
         },
         rules: {
@@ -51,7 +51,8 @@
         that.$refs[formName].validate(valid => {
           if (valid) {
             this.$http
-              .post('/cloudlink-analysis-tianjiio/login/loginByPassword', {
+              // .post('/cloudlink-analysis-tianjiio/login/loginByPassword', {
+              .post('/ms/login/loginByPassword', {
                 loginNum: '' + that.ruleForm.username,
                 password: md5(that.ruleForm.password + '')
               })
