@@ -51,15 +51,16 @@
         that.$refs[formName].validate(valid => {
           if (valid) {
             this.$http
-              .post('/cloudlink-analysis-tianjiio/login/loginByPassword', {
+              .post('/mock/cloudlink-analysis-tianjiio/login/loginByPassword', {
                 loginNum: '' + that.ruleForm.username,
                 password: md5(that.ruleForm.password + '')
               })
               .then(res => {
+                console.log(res)
                 if (res.data.success === 1) {
                   var userBo = res.data.rows[0]
                   localStorage.setItem('ms_username', userBo.userName)
-                  that.$router.push('/index')
+                  that.$router.push('/view_home')
                 } else {
                   that.$message.error('用户名或密码错误')
                 }
@@ -83,7 +84,7 @@
     position: relative;
     width: 100%;
     height: 100%;
-    background: #f90 url(../assets/images/loginbg.jpg) no-repeat;
+    background: #f90 url(/static/images/loginbg.jpg) no-repeat;
     background-size: cover;
   }
   .ms-title {

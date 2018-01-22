@@ -26,28 +26,23 @@
         items: [
           {
             icon: 'el-icon-setting',
-            index: 'index',
-            title: '自述'
+            index: 'dash_board',
+            title: '首页演示'
           },
           {
             icon: 'el-icon-menu',
             index: '2',
-            title: '表格',
+            title: '举例',
             subs: [
               {
-                index: 'view02',
-                title: 'view02'
+                index: 'demo_table',
+                title: '列表模板'
               },
               {
-                index: 'vuetable',
-                title: 'Vue表格组件'
+                index: '/view_home/other',
+                title: '其他'
               }
             ]
-          },
-          {
-            icon: 'el-icon-upload2',
-            index: 'drag',
-            title: '拖拽'
           }
         ]
       }

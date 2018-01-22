@@ -31,6 +31,13 @@ module.exports = {
         pathRewrite: {
           '/ms': ''
         }
+      },
+      '/mock': {
+        target: ' https://www.easy-mock.com/',
+        changeOrigin: true,
+        pathRewrite: {
+          '/mock': '/mock/5a5ee145dec01f1bea369a9c/admin'
+        }
       }
 
     },

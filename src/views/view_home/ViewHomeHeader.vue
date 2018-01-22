@@ -6,7 +6,7 @@
     <div class="user-info">
       <el-dropdown trigger="click" @command="handleCommand">
         <span class="el-dropdown-link">
-          <img class="user-logo" src="../assets/images/logo.png"> {{username}}
+          <img class="user-logo" src="/static/images/loginbg.jpg"> {{username}}
         </span>
         <el-dropdown-menu slot="dropdown">
           <el-dropdown-item command="loginout">退出</el-dropdown-item>
