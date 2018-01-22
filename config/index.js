@@ -22,6 +22,13 @@ module.exports = {
         pathRewrite: {
           '/mock': '/mock/5a5ee145dec01f1bea369a9c/admin'
         }
+      },
+      '/upload': {
+        target: 'https://jsonplaceholder.typicode.com',
+        changeOrigin: true,
+        pathRewrite: {
+          '/upload': ''
+        }
       }
     },
 

@@ -1,6 +1,6 @@
 <template>
   <div class="main">
-    <p class="view">view02</p>
+    <p class="view table-view">view02</p>
     <el-button @click="getTableList">刷新</el-button>
     <el-table :data="tableData" v-loading="loading" border style="width: 100%">
       <el-table-column fixed prop="string" label="星" width="180">
@@ -28,51 +28,57 @@
 </template>
 
 <script>
-export default {
-  name: 'view02',
-  data () {
-    return {
-      tableData: [],
-      dialogVisible: false,
-      loading: true
-    }
-  },
-  created () {
-    this.getTableList()
-  },
-  methods: {
-    getTableList: function () {
-      this.loading = true
-      this.$http
-        .get('/ms/mock', {
-        })
-        .then((res) => {
-          this.tableData = res.data.data.projects
-          this.loading = false
-        })
-        .catch(function (err) {
-          console.log('err', err)
-        })
+  export default {
+    name: 'view02',
+    data () {
+      return {
+        tableData: [],
+        dialogVisible: false,
+        loading: true
+      }
     },
-    handleClick: function (row) {
-      this.dialogVisible = true
+    created () {
+      this.getTableList()
     },
-    handleClose: function (done) {
-      this.$confirm('确认关闭？')
-        .then(_ => {
-          done()
-        })
-        .catch(_ => { })
+    watch: {
+      '$route' (to, from) {
+        console.log(to)
+        console.log(from)
+      }
+    },
+    methods: {
+      getTableList: function () {
+        this.loading = true
+        this.$http
+          .get('/ms/mock', {
+          })
+          .then((res) => {
+            this.tableData = res.data.data.projects
+            this.loading = false
+          })
+          .catch(function (err) {
+            console.log('err', err)
+          })
+      },
+      handleClick: function (row) {
+        this.dialogVisible = true
+      },
+      handleClose: function (done) {
+        this.$confirm('确认关闭？')
+          .then(_ => {
+            done()
+          })
+          .catch(_ => { })
+      }
     }
   }
-}
 </script>
 
 <style scoped lang='scss'>
-.main {
-  .view {
-    color: red;
-    font-size: 16px;
+  .main {
+    .view {
+      color: red;
+      font-size: 16px;
+    }
   }
-}
 </style>

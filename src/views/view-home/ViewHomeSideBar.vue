@@ -26,7 +26,7 @@
         items: [
           {
             icon: 'el-icon-setting',
-            index: 'dash_board',
+            index: '/view-home/dash-board',
             title: '首页演示'
           },
           {
@@ -35,11 +35,11 @@
             title: '举例',
             subs: [
               {
-                index: 'demo_table',
+                index: '/view-home/demo-table',
                 title: '列表模板'
               },
               {
-                index: '/view_home/other',
+                index: '/view-home/other',
                 title: '其他'
               }
             ]

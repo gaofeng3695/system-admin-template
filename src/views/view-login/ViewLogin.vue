@@ -12,7 +12,7 @@
         <div class="login-btn">
           <el-button type="primary" @click="submitForm('ruleForm')">登录</el-button>
         </div>
-        <p class="tip">Tips : 用户名15811236011和密码123123。</p>
+        <p class="tip">Tips : 用户名和密码。</p>
       </el-form>
     </div>
   </div>
@@ -36,7 +36,7 @@
       }
       return {
         ruleForm: {
-          username: 15811236011,
+          username: 18000000000,
           password: 123123
         },
         rules: {
@@ -60,7 +60,7 @@
                 if (res.data.success === 1) {
                   var userBo = res.data.rows[0]
                   localStorage.setItem('ms_username', userBo.userName)
-                  that.$router.push('/view_home')
+                  that.$router.push('/view-home')
                 } else {
                   that.$message.error('用户名或密码错误')
                 }

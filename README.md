@@ -78,10 +78,10 @@
 
     #开启本地开发服务器localhost:8080，自动实现热替换功能
     npm run dev
-
+    
     #使用生产环境配置构建项目，构建好的文件会输出到 "dist" 目录
     npm run build
-
+    
     # 除了正式打包之外，还会输出一份打包报告
     npm run build --report
 
@@ -94,49 +94,64 @@
 
 使用 [easy-mock](https://www.easy-mock.com/) 提供的接口模拟服务，进行数据模拟
 
-#### 1.1 模拟数据的创建
+#### 1.1 模拟项目的创建
 
 1. 登录 [easy-mock](https://www.easy-mock.com/) ，创建账号
-2. 管理员创建团队项目，组员搜索团队项目，加入此项目
+2. 团队中任何人都可以创建团队项目，其他人搜索团队项目，加入此项目
 3. 共同管理项目中的模拟接口
 
 #### 1.2 模拟接口的规定
 
 1. 模拟接口的url要与后端提供接口的url相同
+2. 数据格式与后端提供的接口文档上的格式一致
 
 ### 2. 服务器代理配置
+
+#### 2.1 代理配置
 
 项目中代理到两个服务器环境，开发服务器环境和模拟服务器环境
 在 config/index.js 下dev属性下的proxytable属性添加或修改代理配置
 
 ```javascript
 proxyTable: { //代理配置
+  
   '/cloudlink-': { //请求接口地址中，若匹配到 '/cloudlink-' 字段便进行如下代理
   	'target': 'http://192.168.100.212:3000/', // 代理到的服务器
 	'changeOrigin': true, // 选择true
 	'pathRewrite': { //重写路径的配置
     	'/cloudlink-': '/cloudlink-'
      }
-  }
+  },
+  '/mock': { //模拟的接口统一加mock前缀
+  	'target': 'https://www.easy-mock.com/', // 模拟服务器
+	'changeOrigin': true, // 选择true
+	'pathRewrite': { //重写路径的配置
+    	'/mock': '/mock/5a5ee145dec01f1bea369a9c/admin' //在easy-mock上创建的项目子路径
+     }
+  },
 }
 ```
 
-###
+#### 2.2 路径书写规则
 
-
-
-#### 2.2 模拟服务器的代理
-
+假设后端接口地址为：/cloudlink-analysis-tianjiio/login/loginByPassword
 
 ```javascript
-  '/mock': { //请求接口地址中，若匹配到 '/cloudlink-' 字段便进行如下代理
-  	'target': 'http://192.168.100.212:3000/', // 代理到的服务器
-	'changeOrigin': true, // 选择true
-	'pathRewrite': { //重写路径的配置
-    	'/cloudlink-': '/cloudlink-'
-     }
-  }
+// 开发、上线接口地址不动
+'/cloudlink-analysis-tianjiio/login/loginByPassword'
+
+// 模拟接口，统一加mock前缀，这根和代理上的配置是一致的
+'/mock/cloudlink-analysis-tianjiio/login/loginByPassword'
+
 ```
+
+### 3 请求的发起
+
+使用axios插件发起http请求，详细用法参照下方文档（以后会对请求进一步封装）
+
+- axios 官方文档：[https://github.com/axios/axios](https://github.com/axios/axios)
+- axios 翻译文档：[https://www.jianshu.com/p/df464b26ae58](https://www.jianshu.com/p/df464b26ae58)
+
 
 
 ## 五、开发规范
@@ -179,10 +194,7 @@ my-project-name                     项目名
      └── dash-board                            子视图组件目录
          ├── DashBoard.vue                         子视图组件
          └── DashBoardHeader.vue                   子从属视图组件
-
 ```
-
-
 
 ### 3.资源管理
 
@@ -190,7 +202,23 @@ my-project-name                     项目名
 - 自己的图片资源：放在 static/ images下
 - 自己的css、js等资源：放在 src/assets/ 下
 
-### 4. 编辑器配置
+### 4. npm包管理规范
+
+1. 需要被打包进项目的包，需要加--save命令，例如 js-md5
+
+```
+npm install --save js-md5
+```
+
+2. 开发环境中用到的包，需要加--save-dev命令，例如 sass
+
+```
+npm install --save-dev sass
+```
+
+PS：两者区别可参考 [npm官方文档](https://docs.npmjs.com/getting-started/using-a-package.json)
+
+### 5. 编辑器配置
 
 使用vscode 进行开发，针对vue中eslint规则，进行一些格式化的配置.
 
