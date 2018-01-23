@@ -16,39 +16,41 @@ const router = new Router({
     {
       path: '/view-home',
       component: resolve => require(['../views/view-home/ViewHome.vue'], resolve),
+      beforeEnter: (to, from, next) => {
+        next()
+        // ...
+      },
       children: [{
+        path: '',
+        redirect: 'dash-board'
+      }, {
         path: 'dash-board',
         component: resolve => require(['../views/view-home/dash-board/DashBoard.vue'], resolve)
-      },
-      {
+      }, {
         path: 'demo-table',
         component: resolve => require(['../views/view-home/demo-table/DemoTable.vue'], resolve)
-      }
-      ]
+      }]
+    }, {
+      path: '*',
+      redirect: '/view-login'
     }
   ]
 })
 
-router.beforeEach((to, from, next) => {
+router.beforeEach((to, from, next) => { // 路由守卫
   // to: Route: 即将要进入的目标 路由对象
   // from: Route: 当前导航正要离开的路由
   // next: Function: 一定要调用该方法来 resolve 这个钩子。执行效果依赖 next 方法的调用参数。
-  const nextRoute = ['view-home', 'dash-board', 'demo-table']
   let isLogin = localStorage.getItem('ms_username') // 是否登录
-  const url = {}
-  // 未登录状态；当路由到nextRoute指定页时，跳转至login
-  if (nextRoute.join(',').indexOf(to.name) >= 0) {
-    if (!isLogin) {
-      url['path'] = '/login'
-    }
+  if (to.path.indexOf('view-home') !== -1 && !isLogin) { // 主页并且没有登录
+    next('/view-login') // 去登陆
+    return
   }
-  // 已登录状态；当路由到login时，跳转至home
-  if (to.name === 'login') {
-    if (isLogin) {
-      url['path'] = '/index'
-    }
+  if (to.path.indexOf('view-login') !== -1 && isLogin) { // 登录并且已登录
+    next('/view-home') // 去主页
+    return
   }
-  next(url)
+  next() // 继续
 })
 
 export default router
