@@ -46,14 +46,14 @@
             ]
           }
         ]
-      }
+      };
     },
     computed: {
       onRoutes () {
-        return this.$route.path
+        return this.$route.path;
       }
     }
-  }
+  };
 </script>
 
 <style scoped>

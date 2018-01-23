@@ -16,28 +16,29 @@
   </div>
 </template>
 
+
 <script>
   export default {
     data () {
       return {
         name: 'linxin'
-      }
+      };
     },
     computed: {
       username () {
-        let username = localStorage.getItem('ms_username')
-        return username || this.name
+        let username = this.$storage.get('ms_username');
+        return username || this.name;
       }
     },
     methods: {
       handleCommand (command) {
         if (command === 'loginout') {
-          localStorage.removeItem('ms_username')
-          this.$router.push('/')
+          this.$storage.remove('ms_username');
+          this.$router.push('/');
         }
       }
     }
-  }
+  };
 </script>
 <style scoped>
   .header {

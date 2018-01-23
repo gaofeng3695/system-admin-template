@@ -27,6 +27,7 @@ module.exports = {
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     // jsdoc规则
     "valid-jsdoc": 1,
+    "semi": [2, 'always']
     // 最大长度为 80
     // 'max-len': 'error'
   }

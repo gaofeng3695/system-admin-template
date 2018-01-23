@@ -19,21 +19,22 @@
 </template>
 
 <script>
-  import md5 from 'js-md5'
+  import md5 from 'js-md5';
+
   export default {
     data: () => {
       let checkUser = (rule, value, callback) => {
         if (!value) {
-          return callback(new Error('请输入用户名'))
+          return callback(new Error('请输入用户名'));
         }
         setTimeout(() => {
           if (!Number.isInteger(value)) {
-            callback(new Error('请输入手机号码'))
+            callback(new Error('请输入手机号码'));
           } else {
-            callback()
+            callback();
           }
-        }, 300)
-      }
+        }, 300);
+      };
       return {
         ruleForm: {
           username: 18000000000,
@@ -43,11 +44,11 @@
           username: [{ validator: checkUser, trigger: 'blur' }],
           password: [{ required: true, message: '请输入密码', trigger: 'blur' }]
         }
-      }
+      };
     },
     methods: {
       submitForm (formName) {
-        const that = this
+        const that = this;
         that.$refs[formName].validate(valid => {
           if (valid) {
             this.$http
@@ -56,27 +57,27 @@
                 password: md5(that.ruleForm.password + '')
               })
               .then(res => {
-                console.log(res)
+                console.log(res);
                 if (res.data.success === 1) {
-                  var userBo = res.data.rows[0]
-                  localStorage.setItem('ms_username', userBo.userName)
-                  that.$router.push('/view-home')
+                  var userBo = res.data.rows[0];
+                  this.$storage.set('ms_username', userBo.userName);
+                  that.$router.push('/view-home');
                 } else {
-                  that.$message.error('用户名或密码错误')
+                  that.$message.error('用户名或密码错误');
                 }
               })
               .catch(err => {
-                that.$message.error('用户名或密码错误')
-                console.log('err', err)
-              })
+                that.$message.error('用户名或密码错误');
+                console.log('err', err);
+              });
           } else {
-            console.log('error submit!!')
-            return false
+            console.log('error submit!!');
+            return false;
           }
-        })
+        });
       }
     }
-  }
+  };
 </script>
 
 <style scoped>
