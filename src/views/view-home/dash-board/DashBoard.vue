@@ -30,16 +30,16 @@
   export default {
     data () {
       const generateData = _ => {
-        const data = []
+        const data = [];
         for (let i = 1; i <= 15; i++) {
           data.push({
             key: i,
             label: `备选项 ${i}`,
             disabled: i % 4 === 0
-          })
+          });
         }
-        return data
-      }
+        return data;
+      };
       return {
         color1: '#409EFF',
         color2: null,
@@ -47,9 +47,9 @@
         value1: [1, 4],
         value10: null,
         value2: null
-      }
+      };
     }
-  }
+  };
 </script>
 
 <style scoped>

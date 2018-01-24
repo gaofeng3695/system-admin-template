@@ -35,43 +35,43 @@
         tableData: [],
         dialogVisible: false,
         loading: true
-      }
+      };
     },
     created () {
-      this.getTableList()
+      this.getTableList();
     },
     watch: {
       '$route' (to, from) {
-        console.log(to)
-        console.log(from)
+        console.log(to);
+        console.log(from);
       }
     },
     methods: {
       getTableList: function () {
-        this.loading = true
+        this.loading = true;
         this.$http
           .get('/ms/mock', {
           })
           .then((res) => {
-            this.tableData = res.data.data.projects
-            this.loading = false
+            this.tableData = res.data.data.projects;
+            this.loading = false;
           })
           .catch(function (err) {
-            console.log('err', err)
-          })
+            console.log('err', err);
+          });
       },
       handleClick: function (row) {
-        this.dialogVisible = true
+        this.dialogVisible = true;
       },
       handleClose: function (done) {
         this.$confirm('确认关闭？')
           .then(_ => {
-            done()
+            done();
           })
-          .catch(_ => { })
+          .catch(_ => { });
       }
     }
-  }
+  };
 </script>
 
 <style scoped lang='scss'>

@@ -35,12 +35,12 @@
 </style>
 
 <script>
-  import ViewHomeHeader from './ViewHomeHeader.vue'
-  import ViewHomeSideBar from './ViewHomeSideBar.vue'
+  import ViewHomeHeader from './ViewHomeHeader.vue';
+  import ViewHomeSideBar from './ViewHomeSideBar.vue';
   export default {
     components: {
       ViewHomeHeader,
       ViewHomeSideBar
     }
-  }
+  };
 </script>
