@@ -15,6 +15,7 @@
 ## 二、目录结构
 
     ├── README.md                           项目介绍
+    ├── README-TOOLS.md                     通用方法文档
     ├── package.json                        npm包配置文件
     ├── index.html                          入口页面
     ├── build                               构建脚本目录
@@ -33,6 +34,7 @@
     │   ├── assets                              资源目录
     │   │   ├── js                                  自己编写的js文件目录
     │   │   └── scss                                自己编写的scss文件目录
+    │   │       └── element-variables.scss              主题样式文件，可修改主题颜色
     │   ├── components                          公共组件目录
     │   │   ├── base                                基础功能组件目录
     │   │   └── business                            业务功能组件目录

@@ -5,7 +5,7 @@ import App from './App';
 import router from './router';
 import ElementUI from 'element-ui';
 import axios from 'axios';
-import 'element-ui/lib/theme-chalk/index.css';
+import './assets/scss/element-variables.scss';
 import storage from './assets/js/storage';
 
 Vue.config.productionTip = false;
