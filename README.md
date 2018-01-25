@@ -232,7 +232,7 @@ vscode版本需求：v1.19.2
 - Vetur : 默认自带了格式化的功能，快捷键是shift+option+f（mac）。主要用来格式化复制粘贴的代码。
 - Javascript Standard Style : js 的格式化(很符合ESLint的要求).
 
-在vscode中，点击 文件>首选项>设置,在用户设置中，添加以下设置：
+在vscode中，点击 文件>首选项>设置, 在工作区设置中，添加以下设置：
 
 ```
 {

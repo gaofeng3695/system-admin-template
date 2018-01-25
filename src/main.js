@@ -4,16 +4,17 @@ import Vue from 'vue';
 import App from './App';
 import router from './router';
 import ElementUI from 'element-ui';
-import axios from 'axios';
+
 import './assets/scss/element-variables.scss';
-import storage from './assets/js/storage';
+import jasStorage from './assets/js/jas-storage';
+import jasHttp from './assets/js/jas-http';
 
 Vue.config.productionTip = false;
 
 Vue.use(ElementUI);
 
-Vue.prototype.$http = axios;
-Vue.prototype.$storage = storage;
+Vue.prototype.$jasHttp = jasHttp;
+Vue.prototype.$jasStorage = jasStorage;
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

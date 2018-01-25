@@ -49,9 +49,8 @@
     methods: {
       getTableList: function () {
         this.loading = true;
-        this.$http
-          .get('/ms/mock', {
-          })
+        this.$jasHttp
+          .get('/mock/tableList', {}, true)
           .then((res) => {
             this.tableData = res.data.data.projects;
             this.loading = false;

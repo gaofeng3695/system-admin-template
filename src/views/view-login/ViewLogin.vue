@@ -37,7 +37,7 @@
       };
       return {
         ruleForm: {
-          username: 18000000000,
+          username: 15811236011,
           password: 123123
         },
         rules: {
@@ -51,19 +51,18 @@
         const that = this;
         that.$refs[formName].validate(valid => {
           if (valid) {
-            this.$http
-              .post('/mock/cloudlink-analysis-tianjiio/login/loginByPassword', {
+            this.$jasHttp
+              .post('/cloudlink-analysis-tianjiio/login/loginByPassword', {
                 loginNum: '' + that.ruleForm.username,
                 password: md5(that.ruleForm.password + '')
               })
               .then(res => {
-                console.log(res);
                 if (res.data.success === 1) {
-                  var userBo = res.data.rows[0];
-                  this.$storage.set('ms_username', userBo.userName);
+                  this.$jasStorage.set('token', res.data.rows.token);
+                  this.$jasStorage.set('userInfo', res.data.rows.user);
                   that.$router.push('/view-home');
                 } else {
-                  that.$message.error('用户名或密码错误');
+                  that.$message.error(res.data.msg || '用户名或密码错误');
                 }
               })
               .catch(err => {

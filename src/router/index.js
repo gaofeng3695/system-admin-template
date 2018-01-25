@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import storage from '../assets/js/storage';
+import jasStorage from '../assets/js/jas-storage';
 Vue.use(Router);
 
 const router = new Router({
@@ -38,7 +38,7 @@ router.beforeEach((to, from, next) => { // 路由守卫
   // to: Route: 即将要进入的目标 路由对象
   // from: Route: 当前导航正要离开的路由
   // next: Function: 一定要调用该方法来 resolve 这个钩子。执行效果依赖 next 方法的调用参数。
-  let isLogin = storage.get('ms_username', 1000 * 60 * 60 * 24); // 是否登录
+  let isLogin = jasStorage.get('token', 1000 * 60 * 60 * 24); // 是否登录
   if (to.path.indexOf('view-home') !== -1 && !isLogin) { // 主页并且没有登录
     next('/view-login'); // 去登陆
     return;

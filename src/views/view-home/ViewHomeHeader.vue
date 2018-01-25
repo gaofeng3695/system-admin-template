@@ -26,14 +26,14 @@
     },
     computed: {
       username () {
-        let username = this.$storage.get('ms_username');
+        let username = this.$jasStorage.get('userInfo').userName;
         return username || this.name;
       }
     },
     methods: {
       handleCommand (command) {
         if (command === 'loginout') {
-          this.$storage.remove('ms_username');
+          this.$jasStorage.remove('token');
           this.$router.push('/');
         }
       }
