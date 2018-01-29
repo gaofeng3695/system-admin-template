@@ -37,11 +37,10 @@
               {
                 index: '/view-home/demo-table',
                 title: '列表模板'
-
               },
               {
-                index: '/view-home/other',
-                title: '其他'
+                index: '/view-home/demo-baidu-map',
+                title: '百度地图'
               }
             ]
           }

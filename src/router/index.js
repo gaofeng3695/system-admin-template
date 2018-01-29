@@ -25,6 +25,9 @@ const router = new Router({
       }, {
         path: 'demo-table',
         component: resolve => require(['../views/view-home/demo-table/DemoTable.vue'], resolve)
+      }, {
+        path: 'demo-baidu-map',
+        component: resolve => require(['../views/view-home/demo-baidu-map/DemoBaiduMap.vue'], resolve)
       }]
     },
     { // 错误路径重定向到登录页面
